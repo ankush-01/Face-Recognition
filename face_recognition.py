@@ -10,17 +10,6 @@ def detect(frame):
         #cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
     return faces,gray
 
-#video_capture=cv2.VideoCapture(0)
-
-#while True:
-  #  _,frame=video_capture.read()
-   
-   # canvas,gray=detect(frame) 
-   # cv2.imshow('?N',canvas)
-   # if cv2.waitKey(1) & 0xFF == ord('q'):
-    #    Video_capture.release()
-#        cv2.destroyAllWindows()  
-
 def lebels_for_traningData(directory):
     faces=[]
     faceId=[]
@@ -55,8 +44,6 @@ def put_text(test_img,text,x,y):
 video_capture=cv2.VideoCapture(0)
 while True:
     _,test_img=video_capture.read()
-#test_img=cv2.imread('/mnt/7E5CD04E5CD00337/opn cv/bhajssjd.jpeg')
-    #test_img=cv2.imread(frame)
     faces,faceId=lebels_for_traningData('/mnt/7E5CD04E5CD00337/opn cv/traning data')
     face_detected,gray=detect(test_img)
 
@@ -75,7 +62,7 @@ while True:
     cv2.imshow("recong",test_img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-cv2.destroyAllWindows    
+cv2.destroyAllWindows()    
     
     
     
